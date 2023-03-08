@@ -26,20 +26,20 @@ export const maxAmount = 12;
 
 
 function cartAdd(e) {
-    
+    console.log(111)
     const btn = e.currentTarget;
     const parent = btn.closest('.js_prod__block');
     const amount = parent.querySelector('.js_prod__amount-span');
     const id = parent.getAttribute('id');
 
     let total = parseFloat(parent.querySelector('.js_prod__price').textContent.substr(1));
-   
+    console.log(total);
     let okay = true;
 
     getLocalStorageItem().forEach(product => {
        const productTotal = Number((product.quantity * product.price).toFixed(2));
        total = total + productTotal;
-      
+       console.log(total);
     })
 
     if (total > 500) {
@@ -52,7 +52,6 @@ function cartAdd(e) {
         })
         okay = false;
     }
-
     // ADD TO LOCAL STORAGE
     if (okay){
         if(localStorage(id, amount.textContent) != false) {
@@ -83,6 +82,7 @@ function increment(e) {
 }
 
 function decrement(e) {
+    console.log('decrement')
     // incrementBtn.classList.remove('disable-btn');
     // if(e.currentTarget.classList.contains('disable-btn')) {
     //     return;
