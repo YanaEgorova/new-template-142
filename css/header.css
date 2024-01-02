@@ -10,6 +10,8 @@
 .header__flex {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 .header__btn {
     width: 6rem;
@@ -82,10 +84,9 @@
 }
 
 .cart__btn {
-    display: none;
+    display: flex;
     align-items: center;
     width: fit-content;
-    margin: 0 auto;
     padding: 1.5rem 2rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -103,7 +104,7 @@
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   
    .nav__link {
         position: relative;
@@ -165,5 +166,7 @@
         display: flex;
         margin: 0 12rem 0 5rem;
     }
-  
+  .header__flex {
+    width: fit-content;
+  }
 }
